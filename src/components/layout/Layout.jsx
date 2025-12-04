@@ -4,6 +4,7 @@ import { Button } from '../ui/Button';
 import { Menu, X, Shield, Phone, Mail, Facebook } from 'lucide-react';
 import { useState } from 'react';
 
+
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -12,7 +13,7 @@ const Navbar = () => {
             <div className="container mx-auto px-4 md:px-6">
                 <div className="flex items-center justify-between h-20">
                     <Link to="/" className="flex items-center gap-2">
-                        <img src="/src/assets/logo.png" alt="EON Logo" className="h-20 w-auto object-contain" />
+                        <img src="/logo.png" alt="EON Logo" className="h-20 w-auto object-contain" />
                     </Link>
 
                     {/* Desktop Menu */}

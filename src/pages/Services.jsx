@@ -3,6 +3,10 @@ import { motion } from 'framer-motion';
 import { Shield, TrendingUp, Award, Users, Check } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { Link } from 'react-router-dom';
+import protectionImg from '../assets/service-protection.png';
+import savingsImg from '../assets/service-savings.png';
+import retirementImg from '../assets/service-retirement.png';
+import legacyImg from '../assets/service-legacy.png';
 
 const ServiceSection = ({ id, title, description, icon, features, image, reversed = false, color = "bg-primary" }) => {
     return (
@@ -64,7 +68,7 @@ export const Services = () => {
                 description="Que tu estilo de vida y el de tu familia no se vea comprometido en caso de cualquier eventualidad. Blindamos tu tranquilidad ante riesgos de salud o accidentes."
                 icon={<Shield size={32} />}
                 color="bg-blue-600"
-                image="/src/assets/service-protection.png"
+                image={protectionImg}
                 features={[
                     "Seguros de Gastos Médicos Mayores",
                     "Protección por Invalidez",
@@ -80,7 +84,7 @@ export const Services = () => {
                 icon={<TrendingUp size={32} />}
                 color="bg-green-600"
                 reversed={true}
-                image="/src/assets/service-savings.png"
+                image={savingsImg}
                 features={[
                     "Fondos de ahorro para educación",
                     "Inversión con rendimientos competitivos",
@@ -95,7 +99,7 @@ export const Services = () => {
                 description="Asegura el ingreso deseado para un retiro con libertad financiera. Garantiza tu solvencia para no depender de nadie y seguir tomando tus propias decisiones."
                 icon={<Award size={32} />}
                 color="bg-purple-600"
-                image="/src/assets/service-retirement.png"
+                image={retirementImg}
                 features={[
                     "Planes Personales de Retiro (PPR)",
                     "Estrategias deducibles de impuestos",
@@ -111,7 +115,7 @@ export const Services = () => {
                 icon={<Users size={32} />}
                 color="bg-indigo-600"
                 reversed={true}
-                image="/src/assets/service-legacy.png"
+                image={legacyImg}
                 features={[
                     "Seguros de Vida",
                     "Fideicomisos educativos",
