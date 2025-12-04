@@ -36,7 +36,7 @@ export const About = () => {
                             <div className="absolute inset-0 bg-secondary/10 rounded-3xl transform translate-x-4 translate-y-4"></div>
                             <img
                                 src="/founder.jpg"
-                                alt="Fundador EON Consultoría"
+                                alt="Fundador EON Consultoría en Protección"
                                 className="relative rounded-3xl shadow-xl w-full max-w-md mx-auto"
                             />
                         </div>

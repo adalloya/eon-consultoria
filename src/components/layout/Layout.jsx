@@ -11,9 +11,9 @@ const Navbar = () => {
     return (
         <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
             <div className="container mx-auto px-4 md:px-6">
-                <div className="flex items-center justify-between h-20">
+                <div className="flex items-center justify-between h-24">
                     <Link to="/" className="flex items-center gap-2">
-                        <img src="/logo.png" alt="EON Logo" className="h-20 w-auto object-contain" />
+                        <img src="/logo-new.jpg" alt="EON Consultoría en Protección" className="h-24 w-auto object-contain" />
                     </Link>
 
                     {/* Desktop Menu */}
@@ -61,7 +61,7 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div className="col-span-1 md:col-span-2">
                         <div className="mb-6">
-                            <img src="/logo.png" alt="EON Consultoría" className="h-12 w-auto object-contain brightness-0 invert" />
+                            <img src="/logo-new.jpg" alt="EON Consultoría en Protección" className="h-12 w-auto object-contain brightness-0 invert" />
                         </div>
                         <p className="text-slate-400 max-w-sm">
                             Diseñamos estrategias a tu medida para asegurar el logro de tus metas y proteger lo que más amas.
@@ -103,7 +103,7 @@ export const Layout = ({ children }) => {
     return (
         <div className="min-h-screen flex flex-col bg-slate-50">
             <Navbar />
-            <main className="flex-grow pt-20">
+            <main className="flex-grow pt-24">
                 {children}
             </main>
             <Footer />

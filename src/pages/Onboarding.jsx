@@ -79,7 +79,7 @@ export const Onboarding = () => {
             }
 
             const templateParams = {
-                to_name: "EON Consultoría",
+                to_name: "EON Consultoría en Protección",
                 from_name: formData.name,
                 goal: goals.find(g => g.id === formData.goal)?.label || formData.goal,
                 age: formData.age,

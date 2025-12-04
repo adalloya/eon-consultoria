@@ -64,7 +64,7 @@ export const blogPosts = [
       <p class="mb-4">Entender estos dos conceptos es clave para ajustar el precio. Un deducible más alto baja la prima mensual considerablemente. Si tienes un fondo de emergencia sano, puedes permitirte un deducible mayor y ahorrar miles de pesos al año en tu seguro.</p>
 
       <h3 class="text-2xl font-bold text-primary mt-8 mb-4">La Importancia de un Asesor</h3>
-      <p class="mb-4">Un comparador en internet no conoce tus metas de vida. En EON Consultoría, no vendemos pólizas, diseñamos estrategias. Analizamos tu situación 360° para recomendarte exactamente lo que necesitas, ni más ni menos.</p>
+      <p class="mb-4">Un comparador en internet no conoce tus metas de vida. En EON Consultoría en Protección, no vendemos pólizas, diseñamos estrategias. Analizamos tu situación 360° para recomendarte exactamente lo que necesitas, ni más ni menos.</p>
     `
   }
 ];
