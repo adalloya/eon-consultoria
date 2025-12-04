@@ -4,7 +4,7 @@ import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
 import { Shield, TrendingUp, Users, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import heroBg from '../assets/hero-bg.png';
+
 
 const Hero = () => {
     return (
@@ -13,7 +13,7 @@ const Hero = () => {
             <div className="absolute inset-0 z-0">
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/40 z-10" />
                 <img
-                    src={heroBg}
+                    src="/hero-bg.png"
                     alt="Background"
                     className="w-full h-full object-cover opacity-40"
                 />

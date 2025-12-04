@@ -60,11 +60,8 @@ const Footer = () => {
             <div className="container mx-auto px-4 md:px-6">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div className="col-span-1 md:col-span-2">
-                        <div className="flex items-center gap-2 mb-4">
-                            <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center text-white">
-                                <Shield size={20} />
-                            </div>
-                            <span className="text-xl font-bold">EON Consultoría</span>
+                        <div className="mb-6">
+                            <img src="/logo.png" alt="EON Consultoría" className="h-12 w-auto object-contain brightness-0 invert" />
                         </div>
                         <p className="text-slate-400 max-w-sm">
                             Diseñamos estrategias a tu medida para asegurar el logro de tus metas y proteger lo que más amas.

@@ -1,6 +1,4 @@
-import blogInvestment from '../assets/blog-investment.png';
-import blogYoung from '../assets/blog-young.png';
-import blogCoverage from '../assets/blog-coverage.png';
+
 
 export const blogPosts = [
   {
@@ -10,7 +8,7 @@ export const blogPosts = [
     excerpt: "Cambia tu perspectiva: proteger tu patrimonio es la base de cualquier estrategia financiera sólida. Descubre cómo recuperar tu dinero.",
     date: "12 Oct, 2023",
     author: "Equipo EON",
-    image: blogInvestment,
+    image: "/blog-investment.png",
     category: "Finanzas",
     content: `
       <p class="mb-4">Muchas personas ven los seguros como un "mal necesario" o un gasto mensual que desaparece si no se usa. Sin embargo, esta visión está alejada de la realidad financiera moderna.</p>
@@ -32,7 +30,7 @@ export const blogPosts = [
     excerpt: "El mejor momento para blindarte es cuando 'no lo necesitas'. Aprovecha tu edad para congelar costos y garantizar tu asegurabilidad futura.",
     date: "25 Oct, 2023",
     author: "Equipo EON",
-    image: blogYoung,
+    image: "/blog-young.png",
     category: "Salud",
     content: `
       <p class="mb-4">Es común pensar: "Nunca me enfermo", "Soy deportista", "Eso es para gente mayor". Pero la juventud es, irónicamente, el activo más valioso que tienes para contratar un seguro.</p>
@@ -54,7 +52,7 @@ export const blogPosts = [
     excerpt: "No se trata de tener el seguro más caro, sino el que mejor se adapte a tu etapa de vida. Te enseñamos a identificar tus necesidades reales.",
     date: "05 Nov, 2023",
     author: "Equipo EON",
-    image: blogCoverage,
+    image: "/blog-coverage.png",
     category: "Consejos",
     content: `
       <p class="mb-4">El mercado de seguros es vasto y confuso. Muchos terminan pagando por coberturas que no necesitan o, peor aún, estando infra-asegurados.</p>

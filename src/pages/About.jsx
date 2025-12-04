@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Card } from '../components/ui/Card';
 import { CheckCircle, Users, Target, Heart } from 'lucide-react';
-import founderImg from '../assets/founder.jpg';
+
 
 export const About = () => {
     return (
@@ -35,7 +35,7 @@ export const About = () => {
                         <div className="relative">
                             <div className="absolute inset-0 bg-secondary/10 rounded-3xl transform translate-x-4 translate-y-4"></div>
                             <img
-                                src={founderImg}
+                                src="/founder.jpg"
                                 alt="Fundador EON Consultoría"
                                 className="relative rounded-3xl shadow-xl w-full max-w-md mx-auto"
                             />
