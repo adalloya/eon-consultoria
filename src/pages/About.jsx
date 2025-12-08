@@ -105,11 +105,18 @@ export const About = () => {
                             <p className="text-slate-600 font-medium text-lg max-w-sm">
                                 Somos parte de Grupo De la O, la agencia #1 en MetLife México.
                             </p>
-                            <img
-                                src="/logo-delao.png"
-                                alt="Grupo De la O"
-                                className="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                            />
+                            <a
+                                href="https://gpodelao.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:opacity-80 transition-opacity"
+                            >
+                                <img
+                                    src="/logo-delao.png"
+                                    alt="Grupo De la O"
+                                    className="h-16 object-contain"
+                                />
+                            </a>
                         </div>
 
                         {/* MetLife */}
@@ -117,11 +124,18 @@ export const About = () => {
                             <p className="text-slate-600 font-medium text-lg max-w-sm">
                                 Nuestro principal socio comercial es MetLife, líder global en seguros.
                             </p>
-                            <img
-                                src="/logo-metlife.png"
-                                alt="MetLife"
-                                className="h-20 object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                            />
+                            <a
+                                href="https://www.metlife.com.mx/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:opacity-80 transition-opacity"
+                            >
+                                <img
+                                    src="/logo-metlife.png"
+                                    alt="MetLife"
+                                    className="h-20 object-contain"
+                                />
+                            </a>
                         </div>
                     </div>
                 </div>

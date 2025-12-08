@@ -98,8 +98,28 @@ const Pillars = () => {
                 'Ahorro con beneficios fiscales para persona moral y física'
             ]
         },
-        { id: 'retirement', icon: <Award size={32} />, title: 'Libertad Financiera en tu Retiro', desc: 'Garantiza tu libertad financiera y mantén tu nivel de vida en el futuro.' },
-        { id: 'legacy', icon: <Users size={32} />, title: 'Trascendencia', desc: 'Asegura un legado sólido para tus seres queridos.' },
+        {
+            id: 'retirement',
+            icon: <Award size={32} />,
+            title: 'Libertad Financiera en tu Retiro',
+            desc: [
+                'Planes Personales de Retiro (PPR)',
+                'Estrategias deducibles de impuestos',
+                'Rentas vitalicias garantizadas',
+                'Protección inflacionaria'
+            ]
+        },
+        {
+            id: 'legacy',
+            icon: <Users size={32} />,
+            title: 'Trascendencia',
+            desc: [
+                'Seguros de Vida',
+                'Fideicomisos educativos',
+                'Protección patrimonial hereditaria',
+                'Continuidad de negocios familiares'
+            ]
+        },
     ];
 
     return (
