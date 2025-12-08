@@ -63,9 +63,6 @@ const Footer = () => {
                         <div className="mb-6">
                             <img src="/logo-wide.png" alt="EON Consultoría en Protección" className="h-24 w-auto object-contain brightness-0 invert" />
                         </div>
-                        <p className="text-slate-400 max-w-sm">
-                            Diseñamos estrategias a tu medida para asegurar el logro de tus metas y proteger lo que más amas.
-                        </p>
                     </div>
 
                     <div>
