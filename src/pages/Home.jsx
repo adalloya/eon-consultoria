@@ -136,10 +136,10 @@ const Pillars = () => {
                         <Link key={index} to={`/servicios#${service.id}`} className="block h-full">
                             <Card className="p-8 hover:border-primary/20 h-full flex flex-col justify-between group cursor-pointer">
                                 <div>
-                                    <div className="w-14 h-14 bg-slate-100 rounded-2xl flex items-center justify-center text-slate-700 mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                                    <div className="w-14 h-14 bg-slate-100 rounded-2xl flex items-center justify-center text-slate-700 mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300 mx-auto">
                                         {service.icon}
                                     </div>
-                                    <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
+                                    <h3 className="text-xl font-bold text-slate-900 mb-3 text-center">{service.title}</h3>
                                     <div className="text-slate-500 leading-relaxed text-sm">
                                         {Array.isArray(service.desc) ? (
                                             <ul className="space-y-2 text-left">
