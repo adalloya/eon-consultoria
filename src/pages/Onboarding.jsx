@@ -30,10 +30,10 @@ const steps = [
 ];
 
 const goals = [
-    { id: 'protection', icon: <Shield size={24} />, label: 'Protección Familiar', desc: 'Seguridad para mis seres queridos' },
-    { id: 'savings', icon: <TrendingUp size={24} />, label: 'Ahorro e Inversión', desc: 'Crecer mi capital a mediano plazo' },
-    { id: 'retirement', icon: <Award size={24} />, label: 'Libertad Financiera en tu Retiro', desc: 'Asegurar mi estilo de vida futuro' },
-    { id: 'legacy', icon: <Users size={24} />, label: 'Trascendencia', desc: 'Dejar un legado sólido' },
+    { id: 'protection', icon: <Shield size={24} />, label: 'Protección', desc: 'Seguridad ante cualquier eventualidad' },
+    { id: 'savings', icon: <TrendingUp size={24} />, label: 'Ahorro con Protección', desc: 'Metas a mediano y largo plazo' },
+    { id: 'retirement', icon: <Award size={24} />, label: 'Libertad Financiera en tu Retiro', desc: 'Garantizar mi nivel de vida futuro' },
+    { id: 'legacy', icon: <Users size={24} />, label: 'Trascendencia', desc: 'Asegurar un legado para los míos' },
 ];
 
 export const Onboarding = () => {
