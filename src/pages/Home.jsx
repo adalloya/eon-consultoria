@@ -88,7 +88,7 @@ const Pillars = () => {
                 'Seguridad para tu empresa y socios'
             ]
         },
-        { id: 'savings', icon: <TrendingUp size={32} />, title: 'Ahorro e Inversión', desc: 'Estrategias para alcanzar tus metas financieras a corto y mediano plazo.' },
+        { id: 'savings', icon: <TrendingUp size={32} />, title: 'Ahorro con Protección', desc: 'Estrategias para alcanzar tus metas financieras a corto y mediano plazo.' },
         { id: 'retirement', icon: <Award size={32} />, title: 'Libertad Financiera en tu Retiro', desc: 'Garantiza tu libertad financiera y mantén tu nivel de vida en el futuro.' },
         { id: 'legacy', icon: <Users size={32} />, title: 'Trascendencia', desc: 'Asegura un legado sólido para tus seres queridos.' },
     ];
