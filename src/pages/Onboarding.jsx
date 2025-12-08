@@ -41,6 +41,7 @@ export const Onboarding = () => {
     const [formData, setFormData] = useState({
         name: '',
         goal: '',
+        specificNeed: '',
         age: '',
         occupation: '',
         email: '',
@@ -48,6 +49,74 @@ export const Onboarding = () => {
     });
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
+
+    // Dynamic steps based on state
+    const steps = [
+        {
+            id: 'intro',
+            title: 'Bienvenido',
+            description: 'Para comenzar, ¿cómo te llamas?'
+        },
+        {
+            id: 'goal',
+            title: 'Tu Objetivo Principal',
+            description: '¿Qué es lo que más te interesa asegurar hoy?'
+        },
+        {
+            id: 'specific',
+            title: 'Profundicemos un poco',
+            description: 'Cuéntanos más para entender tu necesidad real.'
+        },
+        {
+            id: 'profile',
+            title: 'Sobre Ti',
+            description: 'Ayúdanos a conocerte mejor para personalizar tu estrategia.'
+        },
+        {
+            id: 'contact',
+            title: 'Contacto',
+            description: '¿Cuál es el mejor canal para contactarte?'
+        }
+    ];
+
+    const specificQuestions = {
+        protection: {
+            question: "¿Qué es lo que más te preocupa hoy?",
+            options: [
+                "Salud y Accidentes",
+                "Respaldo por Fallecimiento",
+                "Invalidez",
+                "Protección Integral"
+            ]
+        },
+        savings: {
+            question: "¿Cuál es el propósito principal de este ahorro?",
+            options: [
+                "Educación de hijos",
+                "Compra de inmueble",
+                "Fondo de emergencia",
+                "Crecer patrimonio"
+            ]
+        },
+        retirement: {
+            question: "¿Cómo te preparas actualmente para tu retiro?",
+            options: [
+                "Solo Afore",
+                "Tengo un PPR",
+                "Inversiones personales",
+                "Aún no he empezado"
+            ]
+        },
+        legacy: {
+            question: "¿A quién deseas proteger principalmente?",
+            options: [
+                "Cónyuge e Hijos",
+                "Socios de Negocio",
+                "Padres",
+                "Patrimonio General"
+            ]
+        }
+    };
 
     const handleNext = () => {
         if (currentStep < steps.length - 1) {
@@ -70,10 +139,9 @@ export const Onboarding = () => {
             const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
             const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-            // Si no hay llaves configuradas, simulamos el envío (para demo)
             if (!serviceId || !templateId || !publicKey) {
                 console.warn("EmailJS keys not found. Simulating success.");
-                await new Promise(resolve => setTimeout(resolve, 1500)); // Espera falsa
+                await new Promise(resolve => setTimeout(resolve, 1500));
                 setIsSubmitted(true);
                 return;
             }
@@ -82,21 +150,15 @@ export const Onboarding = () => {
                 to_name: "EON Consultoría en Protección",
                 from_name: formData.name,
                 goal: goals.find(g => g.id === formData.goal)?.label || formData.goal,
+                specific_need: formData.specificNeed,
                 age: formData.age,
                 occupation: formData.occupation,
                 email: formData.email,
                 phone: formData.phone,
-                message: `Nuevo lead calificado para: ${goals.find(g => g.id === formData.goal)?.label}`
+                message: `Nuevo lead calificado. Pilar: ${goals.find(g => g.id === formData.goal)?.label}. Detalle: ${formData.specificNeed}`
             };
 
-            // Send email using EmailJS
-            await emailjs.send(
-                serviceId,
-                templateId,
-                templateParams,
-                publicKey
-            );
-
+            await emailjs.send(serviceId, templateId, templateParams, publicKey);
             setIsSubmitted(true);
         } catch (error) {
             console.error("Error sending email:", error);
@@ -111,7 +173,11 @@ export const Onboarding = () => {
     };
 
     const selectGoal = (goalId) => {
-        setFormData({ ...formData, goal: goalId });
+        setFormData({ ...formData, goal: goalId, specificNeed: '' }); // Reset specific need on goal change
+    };
+
+    const selectSpecific = (option) => {
+        setFormData({ ...formData, specificNeed: option });
     };
 
     if (isSubmitted) {
@@ -123,7 +189,7 @@ export const Onboarding = () => {
                     </div>
                     <h2 className="text-3xl font-bold text-primary mb-4">¡Gracias, {formData.name}!</h2>
                     <p className="text-slate-600 mb-8 text-lg">
-                        Hemos recibido tu información. Un asesor experto en <strong>{goals.find(g => g.id === formData.goal)?.label || 'Protección'}</strong> te contactará pronto para presentarte tu estrategia ideal.
+                        Hemos recibido tu información. Un asesor experto en <strong>{goals.find(g => g.id === formData.goal)?.label || 'Protección'}</strong> analizará tu perfil para presentarte una estrategia a medida.
                     </p>
                     <Button onClick={() => window.location.href = '/'}>Volver al Inicio</Button>
                 </Card>
@@ -207,7 +273,31 @@ export const Onboarding = () => {
                                     </div>
                                 )}
 
-                                {currentStep === 2 && (
+                                {currentStep === 2 && formData.goal && (
+                                    <div>
+                                        <h3 className="text-lg font-medium text-primary mb-4">
+                                            {specificQuestions[formData.goal]?.question}
+                                        </h3>
+                                        <div className="grid grid-cols-1 gap-3">
+                                            {specificQuestions[formData.goal]?.options.map((option, index) => (
+                                                <button
+                                                    key={index}
+                                                    onClick={() => selectSpecific(option)}
+                                                    className={`
+                                                        p-4 rounded-xl border-2 text-left transition-all duration-200
+                                                        ${formData.specificNeed === option
+                                                            ? 'border-primary bg-primary/5 ring-2 ring-primary/20 font-medium text-primary'
+                                                            : 'border-slate-200 hover:border-primary/50 hover:bg-slate-50 text-slate-700'}
+                                                    `}
+                                                >
+                                                    {option}
+                                                </button>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+
+                                {currentStep === 3 && (
                                     <div className="space-y-4">
                                         <Input
                                             label="Edad"
@@ -227,7 +317,7 @@ export const Onboarding = () => {
                                     </div>
                                 )}
 
-                                {currentStep === 3 && (
+                                {currentStep === 4 && (
                                     <div className="space-y-4">
                                         <Input
                                             label="Correo Electrónico"
@@ -266,8 +356,9 @@ export const Onboarding = () => {
                                 isSubmitting ||
                                 (currentStep === 0 && !formData.name) ||
                                 (currentStep === 1 && !formData.goal) ||
-                                (currentStep === 2 && (!formData.age || !formData.occupation)) ||
-                                (currentStep === 3 && (!formData.email || !formData.phone))
+                                (currentStep === 2 && !formData.specificNeed) ||
+                                (currentStep === 3 && (!formData.age || !formData.occupation)) ||
+                                (currentStep === 4 && (!formData.email || !formData.phone))
                             }
                         >
                             {isSubmitting ? 'Enviando...' : (currentStep === steps.length - 1 ? 'Finalizar' : 'Continuar')} <ArrowRight size={18} />
