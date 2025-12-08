@@ -96,16 +96,33 @@ export const About = () => {
 
             </section >
 
-            {/* Partnership Section - Full Width */}
-            <section className="py-12 bg-slate-50 border-y border-slate-200">
-                <div className="container mx-auto px-4 md:px-6 text-center">
-                    <p className="text-slate-600 font-medium mb-8 text-lg">
-                        Somos parte de Grupo De la O, la agencia #1 en MetLife México.
-                    </p>
-                    <div className="flex items-center justify-center gap-8 md:gap-12 grayscale hover:grayscale-0 transition-all duration-300">
-                        <img src="/logo-metlife.png" alt="MetLife" className="h-16 object-contain" />
-                        <div className="w-px h-12 bg-slate-300"></div>
-                        <img src="/logo-delao.png" alt="Grupo De la O" className="h-12 object-contain" />
+            {/* Partnership Section - Split Columns */}
+            <section className="py-16 bg-slate-50 border-y border-slate-200">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                        {/* Grupo De la O */}
+                        <div className="flex flex-col items-center text-center space-y-6">
+                            <p className="text-slate-600 font-medium text-lg max-w-sm">
+                                Somos parte de Grupo De la O, la agencia #1 en MetLife México.
+                            </p>
+                            <img
+                                src="/logo-delao.png"
+                                alt="Grupo De la O"
+                                className="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                            />
+                        </div>
+
+                        {/* MetLife */}
+                        <div className="flex flex-col items-center text-center space-y-6 md:border-l md:border-slate-200">
+                            <p className="text-slate-600 font-medium text-lg max-w-sm">
+                                Nuestro principal socio comercial es MetLife, líder global en seguros.
+                            </p>
+                            <img
+                                src="/logo-metlife.png"
+                                alt="MetLife"
+                                className="h-20 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                            />
+                        </div>
                     </div>
                 </div>
             </section>
