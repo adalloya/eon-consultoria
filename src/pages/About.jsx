@@ -30,35 +30,35 @@ export const About = () => {
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="w-full md:w-1/2 flex flex-col gap-12"
+                        className="w-full md:w-1/2 grid grid-cols-2 gap-6 items-start"
                     >
                         {/* David */}
-                        <div className="relative">
-                            <div className="absolute inset-0 bg-secondary/10 rounded-3xl transform translate-x-4 translate-y-4"></div>
+                        <div className="relative mt-4">
+                            <div className="absolute inset-0 bg-secondary/10 rounded-2xl transform translate-x-3 translate-y-3"></div>
                             <img
                                 src="/team-david.png"
                                 alt="David Ontiveros"
-                                className="relative rounded-3xl shadow-xl w-full max-w-md mx-auto"
+                                className="relative rounded-2xl shadow-lg w-full object-cover aspect-[3/4]"
                             />
                         </div>
 
                         {/* Cristina */}
-                        <div className="relative">
-                            <div className="absolute inset-0 bg-secondary/10 rounded-3xl transform translate-x-4 translate-y-4"></div>
+                        <div className="relative mt-8"> {/* Added margin top for a staggered look or just alignment */}
+                            <div className="absolute inset-0 bg-secondary/10 rounded-2xl transform translate-x-3 translate-y-3"></div>
                             <img
                                 src="/team-cristina.png"
                                 alt="Cristina Rojo"
-                                className="relative rounded-3xl shadow-xl w-full max-w-md mx-auto"
+                                className="relative rounded-2xl shadow-lg w-full object-cover aspect-[3/4]"
                             />
-                            <div className="absolute -bottom-6 right-0 md:-right-4 flex justify-end w-full pr-8 md:pr-0">
+                            <div className="absolute -bottom-4 -right-2 flex justify-end w-full">
                                 <a
                                     href="https://www.linkedin.com/in/david-alejandro-ontiveros-padilla-32365447"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="bg-[#0077b5] text-white hover:bg-[#006097] font-bold py-2 px-4 rounded-md shadow-lg transition-colors text-sm flex items-center gap-2"
+                                    className="bg-[#0077b5] text-white hover:bg-[#006097] p-2 rounded-md shadow-lg transition-colors flex items-center justify-center"
+                                    title="LinkedIn"
                                 >
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
-                                    <span>LinkedIn</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
                                 </a>
                             </div>
                         </div>
