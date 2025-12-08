@@ -37,9 +37,9 @@ const Hero = () => {
                         transition={{ delay: 0.2, duration: 0.8 }}
                         className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight tracking-tight"
                     >
-                        Protege tu Legado, <br />
+                        Logra tu meta financiera, <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-emerald-300">
-                            Asegura tu Futuro
+                            pase lo que pase
                         </span>
                     </motion.h1>
 
