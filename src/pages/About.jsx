@@ -40,17 +40,6 @@ export const About = () => {
                                 alt="David Ontiveros"
                                 className="relative rounded-3xl shadow-xl w-full max-w-md mx-auto"
                             />
-                            <div className="absolute -bottom-6 right-0 md:-right-4 flex justify-end w-full pr-8 md:pr-0">
-                                <a
-                                    href="https://www.linkedin.com/in/david-alejandro-ontiveros-padilla-32365447"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="bg-white text-primary hover:text-secondary font-medium py-2 px-4 rounded-full shadow-lg border border-slate-100 transition-colors text-sm flex items-center gap-2"
-                                >
-                                    <span>Conocer más</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                                </a>
-                            </div>
                         </div>
 
                         {/* Cristina */}
@@ -61,6 +50,17 @@ export const About = () => {
                                 alt="Cristina Rojo"
                                 className="relative rounded-3xl shadow-xl w-full max-w-md mx-auto"
                             />
+                            <div className="absolute -bottom-6 right-0 md:-right-4 flex justify-end w-full pr-8 md:pr-0">
+                                <a
+                                    href="https://www.linkedin.com/in/david-alejandro-ontiveros-padilla-32365447"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="bg-[#0077b5] text-white hover:bg-[#006097] font-bold py-2 px-4 rounded-md shadow-lg transition-colors text-sm flex items-center gap-2"
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
+                                    <span>LinkedIn</span>
+                                </a>
+                            </div>
                         </div>
                     </motion.div>
                     <div className="w-full md:w-1/2">
