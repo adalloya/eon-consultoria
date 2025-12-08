@@ -38,7 +38,7 @@ export const About = () => {
                             <img
                                 src="/team-david.png"
                                 alt="David Ontiveros"
-                                className="relative rounded-2xl shadow-lg w-full aspect-[3/4] object-cover object-top"
+                                className="relative rounded-2xl shadow-lg w-full aspect-[2/3] object-cover object-top"
                             />
                             <div className="absolute -bottom-4 -right-2 flex justify-end w-full">
                                 <a
@@ -59,7 +59,7 @@ export const About = () => {
                             <img
                                 src="/team-cristina.png"
                                 alt="Cristina Rojo"
-                                className="relative rounded-2xl shadow-lg w-full aspect-[3/4] object-cover object-top"
+                                className="relative rounded-2xl shadow-lg w-full aspect-[2/3] object-cover object-top"
                             />
                         </div>
                     </motion.div>
