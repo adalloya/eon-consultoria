@@ -77,7 +77,7 @@ export const Services = () => {
             <ServiceSection
                 id="savings"
                 title="Ahorro con Protección"
-                description="Haz que tu dinero trabaje para ti. Diseñamos estrategias para asegurar el logro de tus metas financieras a corto y mediano plazo."
+                description="Diseñamos estrategias para asegurar el logro de tus metas financieras a mediano y largo plazo."
                 icon={<TrendingUp size={32} />}
                 color="bg-green-600"
                 reversed={true}
