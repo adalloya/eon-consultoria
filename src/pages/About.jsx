@@ -91,19 +91,24 @@ export const About = () => {
                         </div>
                     </div>
 
-                    <div className="mt-8 pt-8 border-t border-slate-200">
-                        <p className="text-slate-600 font-medium mb-6">
-                            Somos parte de Grupo De la O, la agencia #1 en MetLife México.
-                        </p>
-                        <div className="flex items-center gap-6">
-                            <img src="/logo-metlife.png" alt="MetLife" className="h-12 object-contain" />
-                            <div className="w-px h-8 bg-slate-300"></div>
-                            <img src="/logo-delao.png" alt="Grupo De la O" className="h-8 object-contain" />
-                        </div>
-                    </div>
+
                 </div>
 
             </section >
+
+            {/* Partnership Section - Full Width */}
+            <section className="py-12 bg-slate-50 border-y border-slate-200">
+                <div className="container mx-auto px-4 md:px-6 text-center">
+                    <p className="text-slate-600 font-medium mb-8 text-lg">
+                        Somos parte de Grupo De la O, la agencia #1 en MetLife México.
+                    </p>
+                    <div className="flex items-center justify-center gap-8 md:gap-12 grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="/logo-metlife.png" alt="MetLife" className="h-16 object-contain" />
+                        <div className="w-px h-12 bg-slate-300"></div>
+                        <img src="/logo-delao.png" alt="Grupo De la O" className="h-12 object-contain" />
+                    </div>
+                </div>
+            </section>
 
             {/* Methodology / Protocol */}
             < section className="py-20 bg-white" >
