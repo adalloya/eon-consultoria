@@ -76,6 +76,11 @@ export const Onboarding = () => {
             id: 'contact',
             title: 'Contacto',
             description: '¿Cuál es el mejor canal para contactarte?'
+        },
+        {
+            id: 'summary',
+            title: 'Resumen',
+            description: 'Confirma que tus datos sean correctos antes de enviar.'
         }
     ];
 
@@ -134,38 +139,32 @@ export const Onboarding = () => {
 
     const handleSubmit = async () => {
         setIsSubmitting(true);
-        try {
-            const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-            const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-            const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-            if (!serviceId || !templateId || !publicKey) {
-                console.warn("EmailJS keys not found. Simulating success.");
-                await new Promise(resolve => setTimeout(resolve, 1500));
-                setIsSubmitted(true);
-                return;
-            }
+        const goalLabel = goals.find(g => g.id === formData.goal)?.label || formData.goal;
 
-            const templateParams = {
-                to_name: "EON Consultoría en Protección",
-                from_name: formData.name,
-                goal: goals.find(g => g.id === formData.goal)?.label || formData.goal,
-                specific_need: formData.specificNeed,
-                age: formData.age,
-                occupation: formData.occupation,
-                email: formData.email,
-                phone: formData.phone,
-                message: `Nuevo lead calificado. Pilar: ${goals.find(g => g.id === formData.goal)?.label}. Detalle: ${formData.specificNeed}`
-            };
+        const subject = `Nueva Solicitud de Estrategia: ${goalLabel} - ${formData.name}`;
+        const body = `Hola, me gustaría recibir una estrategia personalizada.
+        
+Mis datos son:
+- Nombre: ${formData.name}
+- Objetivo: ${goalLabel}
+- Necesidad Específica: ${formData.specificNeed}
+- Edad: ${formData.age}
+- Ocupación: ${formData.occupation}
+- Email: ${formData.email}
+- Teléfono: ${formData.phone}
 
-            await emailjs.send(serviceId, templateId, templateParams, publicKey);
+Quedo a la espera de su contacto.`;
+
+        const mailtoLink = `mailto:contacto@eonconsultoria.com.mx?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        window.location.href = mailtoLink;
+
+        // Simulate success state after opening mail client
+        setTimeout(() => {
             setIsSubmitted(true);
-        } catch (error) {
-            console.error("Error sending email:", error);
-            alert("Hubo un error al enviar tu información. Por favor intenta de nuevo.");
-        } finally {
             setIsSubmitting(false);
-        }
+        }, 1000);
     };
 
     const handleChange = (e) => {
@@ -187,9 +186,9 @@ export const Onboarding = () => {
                     <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 text-green-600">
                         <Check size={40} />
                     </div>
-                    <h2 className="text-3xl font-bold text-primary mb-4">¡Gracias, {formData.name}!</h2>
+                    <h2 className="text-3xl font-bold text-primary mb-4">¡Excelente, {formData.name}!</h2>
                     <p className="text-slate-600 mb-8 text-lg">
-                        Hemos recibido tu información. Un asesor experto en <strong>{goals.find(g => g.id === formData.goal)?.label || 'Protección'}</strong> analizará tu perfil para presentarte una estrategia a medida.
+                        Se ha abierto tu correo para enviar la solicitud. Si no se abrió automáticamente, por favor envía la información a <strong>contacto@eonconsultoria.com.mx</strong>.
                     </p>
                     <Button onClick={() => window.location.href = '/'}>Volver al Inicio</Button>
                 </Card>
@@ -337,6 +336,44 @@ export const Onboarding = () => {
                                         />
                                     </div>
                                 )}
+
+                                {currentStep === 5 && (
+                                    <div className="bg-slate-50 p-6 rounded-xl border border-slate-200 space-y-4">
+                                        <div className="grid grid-cols-2 gap-4">
+                                            <div>
+                                                <span className="text-xs text-slate-500 uppercase font-bold">Nombre</span>
+                                                <p className="text-slate-900 font-medium">{formData.name}</p>
+                                            </div>
+                                            <div>
+                                                <span className="text-xs text-slate-500 uppercase font-bold">Objetivo</span>
+                                                <p className="text-slate-900 font-medium">{goals.find(g => g.id === formData.goal)?.label}</p>
+                                            </div>
+                                            <div className="col-span-2">
+                                                <span className="text-xs text-slate-500 uppercase font-bold">Necesidad Específica</span>
+                                                <p className="text-slate-900 font-medium">{formData.specificNeed}</p>
+                                            </div>
+                                            <div>
+                                                <span className="text-xs text-slate-500 uppercase font-bold">Edad</span>
+                                                <p className="text-slate-900 font-medium">{formData.age} años</p>
+                                            </div>
+                                            <div>
+                                                <span className="text-xs text-slate-500 uppercase font-bold">Ocupación</span>
+                                                <p className="text-slate-900 font-medium">{formData.occupation}</p>
+                                            </div>
+                                            <div>
+                                                <span className="text-xs text-slate-500 uppercase font-bold">Email</span>
+                                                <p className="text-slate-900 font-medium">{formData.email}</p>
+                                            </div>
+                                            <div>
+                                                <span className="text-xs text-slate-500 uppercase font-bold">Teléfono</span>
+                                                <p className="text-slate-900 font-medium">{formData.phone}</p>
+                                            </div>
+                                        </div>
+                                        <div className="text-xs text-slate-500 mt-4 pt-4 border-t border-slate-200">
+                                            * Al hacer clic en "Enviar Solicitud", se abrirá tu aplicación de correo para enviar estos datos.
+                                        </div>
+                                    </div>
+                                )}
                             </motion.div>
                         </AnimatePresence>
                     </div>
@@ -361,7 +398,7 @@ export const Onboarding = () => {
                                 (currentStep === 4 && (!formData.email || !formData.phone))
                             }
                         >
-                            {isSubmitting ? 'Enviando...' : (currentStep === steps.length - 1 ? 'Finalizar' : 'Continuar')} <ArrowRight size={18} />
+                            {isSubmitting ? 'Abriendo Correo...' : (currentStep === steps.length - 1 ? 'Enviar Solicitud' : 'Continuar')} <ArrowRight size={18} />
                         </Button>
                     </div>
                 </Card>
