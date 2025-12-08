@@ -17,7 +17,7 @@ export const About = () => {
                     >
                         <h1 className="text-4xl md:text-5xl font-bold mb-6">Maestría en Acción</h1>
                         <p className="text-xl text-slate-300 leading-relaxed">
-                            Nuestra consultoría se adapta al ciclo de vida de tu patrimonio. No solo vendemos seguros, diseñamos estrategias de vida.
+                            Nuestra consultoría se basa en detectar tus necesidades sin importar la etapa de la vida en la que te encuentres. No vendemos seguros, diseñamos estrategias de vida a través de los seguros.
                         </p>
                     </motion.div>
                 </div>
