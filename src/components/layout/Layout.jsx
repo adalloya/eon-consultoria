@@ -11,9 +11,9 @@ const Navbar = () => {
     return (
         <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
             <div className="container mx-auto px-4 md:px-6">
-                <div className="flex items-center justify-between h-28">
+                <div className="flex items-center justify-between h-32">
                     <Link to="/" className="flex items-center gap-2">
-                        <img src="/logo-new.jpg" alt="EON Consultoría en Protección" className="h-28 w-auto object-contain" />
+                        <img src="/logo-new.jpg" alt="EON Consultoría en Protección" className="h-32 w-auto object-contain" />
                     </Link>
 
                     {/* Desktop Menu */}
@@ -103,7 +103,7 @@ export const Layout = ({ children }) => {
     return (
         <div className="min-h-screen flex flex-col bg-slate-50">
             <Navbar />
-            <main className="flex-grow pt-28">
+            <main className="flex-grow pt-32">
                 {children}
             </main>
             <Footer />
