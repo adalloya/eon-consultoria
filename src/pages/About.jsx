@@ -30,13 +30,35 @@ export const About = () => {
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="w-full md:w-1/2"
+                        className="w-full md:w-1/2 flex flex-col gap-12"
                     >
+                        {/* David */}
                         <div className="relative">
                             <div className="absolute inset-0 bg-secondary/10 rounded-3xl transform translate-x-4 translate-y-4"></div>
                             <img
-                                src="/founder.jpg"
-                                alt="Fundador EON Consultoría en Protección"
+                                src="/team-david.png"
+                                alt="David Ontiveros"
+                                className="relative rounded-3xl shadow-xl w-full max-w-md mx-auto"
+                            />
+                            <div className="absolute -bottom-6 right-0 md:-right-4 flex justify-end w-full pr-8 md:pr-0">
+                                <a
+                                    href="https://www.linkedin.com/in/david-alejandro-ontiveros-padilla-32365447"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="bg-white text-primary hover:text-secondary font-medium py-2 px-4 rounded-full shadow-lg border border-slate-100 transition-colors text-sm flex items-center gap-2"
+                                >
+                                    <span>Conocer más</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        {/* Cristina */}
+                        <div className="relative">
+                            <div className="absolute inset-0 bg-secondary/10 rounded-3xl transform translate-x-4 translate-y-4"></div>
+                            <img
+                                src="/team-cristina.png"
+                                alt="Cristina Rojo"
                                 className="relative rounded-3xl shadow-xl w-full max-w-md mx-auto"
                             />
                         </div>
