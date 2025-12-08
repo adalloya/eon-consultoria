@@ -61,7 +61,7 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div className="col-span-1 md:col-span-2">
                         <div className="mb-6">
-                            <img src="/logo-new.jpg" alt="EON Consultoría en Protección" className="h-12 w-auto object-contain brightness-0 invert" />
+                            <img src="/logo-wide.png" alt="EON Consultoría en Protección" className="h-24 w-auto object-contain brightness-0 invert" />
                         </div>
                         <p className="text-slate-400 max-w-sm">
                             Diseñamos estrategias a tu medida para asegurar el logro de tus metas y proteger lo que más amas.
