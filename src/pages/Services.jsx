@@ -83,10 +83,9 @@ export const Services = () => {
                 reversed={true}
                 image="/service-savings.png"
                 features={[
-                    "Fondos de ahorro para educación",
-                    "Inversión con rendimientos competitivos",
-                    "Liquidez para proyectos personales",
-                    "Beneficios fiscales"
+                    "Ahorro tradicional con rendimientos competitivos garantizados",
+                    "Ahorro flexible con fondos adicionales a la vista",
+                    "Ahorro con beneficios fiscales para persona moral y física"
                 ]}
             />
 

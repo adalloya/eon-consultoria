@@ -88,7 +88,16 @@ const Pillars = () => {
                 'Seguridad para tu empresa y socios'
             ]
         },
-        { id: 'savings', icon: <TrendingUp size={32} />, title: 'Ahorro con Protección', desc: 'Estrategias para alcanzar tus metas financieras a mediano y largo plazo.' },
+        {
+            id: 'savings',
+            icon: <TrendingUp size={32} />,
+            title: 'Ahorro con Protección',
+            desc: [
+                'Ahorro tradicional con rendimientos competitivos garantizados',
+                'Ahorro flexible con fondos adicionales a la vista',
+                'Ahorro con beneficios fiscales para persona moral y física'
+            ]
+        },
         { id: 'retirement', icon: <Award size={32} />, title: 'Libertad Financiera en tu Retiro', desc: 'Garantiza tu libertad financiera y mantén tu nivel de vida en el futuro.' },
         { id: 'legacy', icon: <Users size={32} />, title: 'Trascendencia', desc: 'Asegura un legado sólido para tus seres queridos.' },
     ];
