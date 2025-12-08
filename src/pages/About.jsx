@@ -102,51 +102,51 @@ export const About = () => {
                         </div>
                     </div>
                 </div>
-        </div>
+
             </section >
 
-    {/* Methodology / Protocol */ }
-    < section className = "py-20 bg-white" >
-        <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center mb-16">
-                <h2 className="text-3xl font-bold text-primary mb-4">Protocolo de Consultoría</h2>
-                <p className="text-slate-600 max-w-2xl mx-auto">
-                    Un proceso estructurado para garantizar el éxito de tu estrategia financiera.
-                </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <Card className="text-center hover:border-secondary/50 transition-colors">
-                    <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6 text-blue-600">
-                        <Target size={32} />
+            {/* Methodology / Protocol */}
+            < section className="py-20 bg-white" >
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl font-bold text-primary mb-4">Protocolo de Consultoría</h2>
+                        <p className="text-slate-600 max-w-2xl mx-auto">
+                            Un proceso estructurado para garantizar el éxito de tu estrategia financiera.
+                        </p>
                     </div>
-                    <h3 className="text-xl font-bold text-primary mb-3">1. Diagnóstico 360°</h3>
-                    <p className="text-slate-600">
-                        Conocemos y entendemos tus necesidades a través de un análisis profundo de tu situación actual.
-                    </p>
-                </Card>
 
-                <Card className="text-center hover:border-secondary/50 transition-colors">
-                    <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-6 text-green-600">
-                        <Users size={32} />
-                    </div>
-                    <h3 className="text-xl font-bold text-primary mb-3">2. Diseño de Solución</h3>
-                    <p className="text-slate-600">
-                        Creamos la mejor estrategia financiera a tu medida, respaldada por las mejores instituciones.
-                    </p>
-                </Card>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <Card className="text-center hover:border-secondary/50 transition-colors">
+                            <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6 text-blue-600">
+                                <Target size={32} />
+                            </div>
+                            <h3 className="text-xl font-bold text-primary mb-3">1. Diagnóstico 360°</h3>
+                            <p className="text-slate-600">
+                                Conocemos y entendemos tus necesidades a través de un análisis profundo de tu situación actual.
+                            </p>
+                        </Card>
 
-                <Card className="text-center hover:border-secondary/50 transition-colors">
-                    <div className="w-16 h-16 bg-purple-50 rounded-full flex items-center justify-center mx-auto mb-6 text-purple-600">
-                        <Heart size={32} />
+                        <Card className="text-center hover:border-secondary/50 transition-colors">
+                            <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-6 text-green-600">
+                                <Users size={32} />
+                            </div>
+                            <h3 className="text-xl font-bold text-primary mb-3">2. Diseño de Solución</h3>
+                            <p className="text-slate-600">
+                                Creamos la mejor estrategia financiera a tu medida, respaldada por las mejores instituciones.
+                            </p>
+                        </Card>
+
+                        <Card className="text-center hover:border-secondary/50 transition-colors">
+                            <div className="w-16 h-16 bg-purple-50 rounded-full flex items-center justify-center mx-auto mb-6 text-purple-600">
+                                <Heart size={32} />
+                            </div>
+                            <h3 className="text-xl font-bold text-primary mb-3">3. Acompañamiento</h3>
+                            <p className="text-slate-600">
+                                Estamos contigo en todo el trayecto. Adaptamos la estrategia conforme tu vida evoluciona.
+                            </p>
+                        </Card>
                     </div>
-                    <h3 className="text-xl font-bold text-primary mb-3">3. Acompañamiento</h3>
-                    <p className="text-slate-600">
-                        Estamos contigo en todo el trayecto. Adaptamos la estrategia conforme tu vida evoluciona.
-                    </p>
-                </Card>
-            </div>
-        </div>
+                </div>
             </section >
         </div >
     );
