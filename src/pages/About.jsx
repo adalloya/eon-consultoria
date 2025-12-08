@@ -25,7 +25,7 @@ export const About = () => {
 
             {/* Founder / Team Section */}
             <section className="py-20 container mx-auto px-4 md:px-6">
-                <div className="flex flex-col md:flex-row items-center gap-12">
+                <div className="flex flex-col md:flex-row items-start gap-12">
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
