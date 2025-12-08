@@ -77,7 +77,17 @@ const Hero = () => {
 
 const Pillars = () => {
     const services = [
-        { id: 'protection', icon: <Shield size={32} />, title: 'Protección', desc: 'Respaldo ante eventualidades de salud, invalidez o fallecimiento para ti y tu familia.' },
+        {
+            id: 'protection',
+            icon: <Shield size={32} />,
+            title: 'Protección',
+            desc: [
+                'Seguros de Gasto Médicos Mayores y Accidentes personales',
+                'Protección por invalidez y/o muerte',
+                'Cobertura ante graves enfermedades',
+                'Seguridad para tu empresa y socios'
+            ]
+        },
         { id: 'savings', icon: <TrendingUp size={32} />, title: 'Ahorro e Inversión', desc: 'Estrategias para alcanzar tus metas financieras a corto y mediano plazo.' },
         { id: 'retirement', icon: <Award size={32} />, title: 'Libertad Financiera en tu Retiro', desc: 'Garantiza tu libertad financiera y mantén tu nivel de vida en el futuro.' },
         { id: 'legacy', icon: <Users size={32} />, title: 'Trascendencia', desc: 'Asegura un legado sólido para tus seres queridos.' },
@@ -101,9 +111,20 @@ const Pillars = () => {
                                         {service.icon}
                                     </div>
                                     <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
-                                    <p className="text-slate-500 leading-relaxed">
-                                        {service.desc}
-                                    </p>
+                                    <div className="text-slate-500 leading-relaxed text-sm">
+                                        {Array.isArray(service.desc) ? (
+                                            <ul className="space-y-2 text-left">
+                                                {service.desc.map((item, i) => (
+                                                    <li key={i} className="flex items-start gap-2">
+                                                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0" />
+                                                        <span>{item}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        ) : (
+                                            <p>{service.desc}</p>
+                                        )}
+                                    </div>
                                 </div>
                             </Card>
                         </Link>
