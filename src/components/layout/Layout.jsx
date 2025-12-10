@@ -11,9 +11,9 @@ const Navbar = () => {
     return (
         <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
             <div className="container mx-auto px-4 md:px-6">
-                <div className="flex items-center justify-between h-32">
+                <div className="flex items-center justify-between h-24 md:h-32">
                     <Link to="/" className="flex items-center gap-2">
-                        <img src="/logo-wide.png" alt="EON Consultoría en Protección" className="h-32 w-auto object-contain" />
+                        <img src="/logo-wide.png" alt="EON Consultoría en Protección" className="h-16 md:h-32 w-auto object-contain" />
                     </Link>
 
                     {/* Desktop Menu */}
@@ -45,6 +45,7 @@ const Navbar = () => {
                     <Link to="/" className="text-slate-600 font-medium">Inicio</Link>
                     <Link to="/nosotros" className="text-slate-600 font-medium">Nosotros</Link>
                     <Link to="/servicios" className="text-slate-600 font-medium">Servicios</Link>
+                    <Link to="/blog" className="text-slate-600 font-medium">Blog</Link>
                     <Link to="/onboarding">
                         <Button className="w-full">Descubre tu Estrategia</Button>
                     </Link>
