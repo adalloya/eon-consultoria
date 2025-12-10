@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { blogPosts } from '../data/blogPosts';
 import { Button } from '../components/ui/Button';
 import { ArrowLeft, Calendar, User, Share2, Facebook } from 'lucide-react';
@@ -14,13 +15,36 @@ export const BlogPost = () => {
     }
 
     const shareUrl = window.location.href;
+    const shareText = `¡Checa este artículo de EON Consultoría! 🛡️ ${post.title}`;
 
     const handleShare = () => {
-        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`, '_blank');
+        // Facebook sharer with quote param (though support varies, it's the standard intent)
+        const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}&quote=${encodeURIComponent(shareText)}`;
+        window.open(facebookUrl, '_blank', 'width=600,height=400');
     };
 
     return (
         <div className="min-h-screen bg-slate-50 pt-20 pb-20">
+            <Helmet>
+                <title>{post.title} | EON Consultoría</title>
+                <meta name="description" content={post.excerpt} />
+
+                {/* Open Graph / Facebook */}
+                <meta property="og:type" content="article" />
+                <meta property="og:url" content={shareUrl} />
+                <meta property="og:title" content={post.title} />
+                <meta property="og:description" content={post.excerpt} />
+                <meta property="og:image" content={`https://eonconsultoria.com.mx${post.image}`} />
+                <meta property="og:site_name" content="EON Consultoría Patrimonial" />
+
+                {/* Twitter */}
+                <meta property="twitter:card" content="summary_large_image" />
+                <meta property="twitter:url" content={shareUrl} />
+                <meta property="twitter:title" content={post.title} />
+                <meta property="twitter:description" content={post.excerpt} />
+                <meta property="twitter:image" content={`https://eonconsultoria.com.mx${post.image}`} />
+            </Helmet>
+
             {/* Hero Image */}
             <div className="h-[40vh] w-full relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent z-10" />
