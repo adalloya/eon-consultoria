@@ -2,8 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
-import { Shield, TrendingUp, Users, Award } from 'lucide-react';
+import { Shield, TrendingUp, Users, Award, ArrowRight, Calendar, User } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { blogPosts } from '../data/blogPosts';
 
 
 const Hero = () => {
@@ -164,11 +165,78 @@ const Pillars = () => {
     );
 };
 
+const LatestNews = () => {
+    // Get the last 3 posts and reverse them to show newest first
+    const latestPosts = [...blogPosts].reverse().slice(0, 3);
+
+    return (
+        <section className="py-20 bg-white">
+            <div className="container mx-auto px-4 md:px-6">
+                <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                    <div>
+                        <span className="text-secondary font-bold tracking-wider uppercase text-sm mb-2 block">Actualidad</span>
+                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Últimas Noticias</h2>
+                    </div>
+                    <Link to="/blog">
+                        <Button variant="outline" className="group">
+                            Ver todos los artículos
+                            <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                        </Button>
+                    </Link>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {latestPosts.map((post) => (
+                        <Link key={post.id} to={`/blog/${post.slug}`} className="group block h-full">
+                            <article className="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                                <div className="h-48 overflow-hidden relative">
+                                    <div className="absolute top-4 left-4 z-10">
+                                        <span className="inline-block px-3 py-1 bg-white/90 backdrop-blur-sm text-primary text-xs font-bold rounded-full shadow-sm">
+                                            {post.category}
+                                        </span>
+                                    </div>
+                                    <img
+                                        src={post.image}
+                                        alt={post.title}
+                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    />
+                                </div>
+                                <div className="p-6 flex-grow flex flex-col">
+                                    <div className="flex items-center gap-4 text-slate-400 text-xs mb-3">
+                                        <div className="flex items-center gap-1">
+                                            <Calendar size={14} />
+                                            <span>{post.date}</span>
+                                        </div>
+                                        <div className="flex items-center gap-1">
+                                            <User size={14} />
+                                            <span>{post.author}</span>
+                                        </div>
+                                    </div>
+                                    <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                                        {post.title}
+                                    </h3>
+                                    <p className="text-slate-500 text-sm leading-relaxed line-clamp-3 mb-4 flex-grow">
+                                        {post.excerpt}
+                                    </p>
+                                    <span className="text-secondary font-medium text-sm flex items-center mt-auto">
+                                        Leer artículo <ArrowRight size={14} className="ml-1" />
+                                    </span>
+                                </div>
+                            </article>
+                        </Link>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+};
+
 export const Home = () => {
     return (
         <>
             <Hero />
             <Pillars />
+            <LatestNews />
         </>
     );
 };
