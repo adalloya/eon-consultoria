@@ -41,15 +41,21 @@ const Navbar = () => {
 
             {/* Mobile Menu */}
             {isOpen && (
-                <div className="md:hidden bg-white border-b border-slate-100 p-4 flex flex-col gap-4">
-                    <Link to="/" className="text-slate-600 font-medium">Inicio</Link>
-                    <Link to="/nosotros" className="text-slate-600 font-medium">Nosotros</Link>
-                    <Link to="/servicios" className="text-slate-600 font-medium">Servicios</Link>
-                    <Link to="/blog" className="text-slate-600 font-medium">Blog</Link>
-                    <Link to="/onboarding">
-                        <Button className="w-full">Descubre tu Estrategia</Button>
-                    </Link>
-                </div>
+                <>
+                    <div
+                        className="fixed inset-0 z-40 bg-black/20 md:hidden"
+                        onClick={() => setIsOpen(false)}
+                    />
+                    <div className="md:hidden bg-white border-b border-slate-100 p-4 flex flex-col gap-4 relative z-50">
+                        <Link to="/" className="text-slate-600 font-medium" onClick={() => setIsOpen(false)}>Inicio</Link>
+                        <Link to="/nosotros" className="text-slate-600 font-medium" onClick={() => setIsOpen(false)}>Nosotros</Link>
+                        <Link to="/servicios" className="text-slate-600 font-medium" onClick={() => setIsOpen(false)}>Servicios</Link>
+                        <Link to="/blog" className="text-slate-600 font-medium" onClick={() => setIsOpen(false)}>Blog</Link>
+                        <Link to="/onboarding" onClick={() => setIsOpen(false)}>
+                            <Button className="w-full">Descubre tu Estrategia</Button>
+                        </Link>
+                    </div>
+                </>
             )}
         </nav>
     );
